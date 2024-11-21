@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { TypewriterEffect } from './ui/typewriter-effect';
+import { GlitchText } from './ui/glitch-text';
 
 export default function ProfileCard() {
   return (
@@ -26,11 +27,7 @@ export default function ProfileCard() {
             priority
           />
         </div>
-        <motion.h1
-          className="mt-4 text-xl sm:text-2xl font-bold text-white"
-        >
-          ZAID ADIL
-        </motion.h1>
+        <GlitchText />
         <div className="mt-2 text-sm sm:text-base">
           <TypewriterEffect />
         </div>

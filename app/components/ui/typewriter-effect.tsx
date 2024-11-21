@@ -5,8 +5,8 @@ export const TypewriterEffect = () => {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
-  const messages = ["Frontend Developer", "UI/UX Designer"];
-  const period = 2000;
+  const messages = ["Full Stack Developer by Day", "Cyber Security Engineer by Night!"];
+  const period = 1000;
   const [delta, setDelta] = useState(100);
 
   useEffect(() => {
@@ -32,9 +32,9 @@ export const TypewriterEffect = () => {
     } else if (isDeleting && updatedText === '') {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      setDelta(100);
+      setDelta(50);
     } else {
-      setDelta(100);
+      setDelta(50);
     }
   };
 
