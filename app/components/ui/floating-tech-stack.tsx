@@ -24,8 +24,8 @@ import {
 const techStack = [
   {
     name: "HTML5",
-    icon: <FaHtml5 className="text-[#E34F26] w-12 h-12" />, // Increased size
-    size: 48 // Increased container size
+    icon: <FaHtml5 className="text-[#E34F26] w-12 h-12" />,
+    size: 48
   },
   {
     name: "CSS3",
@@ -120,21 +120,21 @@ const generateRandomPosition = () => {
     case 0: // Top
       return {
         x: Math.random() * windowSize.width,
-        y: -100
+        y: -50
       };
     case 1: // Right
       return {
-        x: windowSize.width + 100,
+        x: windowSize.width + 50,
         y: Math.random() * windowSize.height
       };
     case 2: // Bottom
       return {
         x: Math.random() * windowSize.width,
-        y: windowSize.height + 100
+        y: windowSize.height + 50
       };
     default: // Left
       return {
-        x: -100,
+        x: -50,
         y: Math.random() * windowSize.height
       };
   }
@@ -151,9 +151,9 @@ export const FloatingTechStack = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-//hello
+
   return (
-    <div className="fixed inset-0 pointer-events-none">
+    <div className="fixed inset-0 pointer-events-none overflow-hidden">
       {techStack.map((tech, idx) => (
         <motion.div
           key={tech.name}
@@ -162,24 +162,24 @@ export const FloatingTechStack = () => {
           animate={{
             x: [
               null,
-              Math.random() * windowSize.width * 0.8,
-              Math.random() * windowSize.width * 0.2,
-              Math.random() * windowSize.width * 0.7,
-              Math.random() * windowSize.width * 0.5,
+              Math.random() * windowSize.width,
+              Math.random() * windowSize.width,
+              Math.random() * windowSize.width,
+              Math.random() * windowSize.width,
             ],
             y: [
               null,
-              Math.random() * windowSize.height * 0.8,
-              Math.random() * windowSize.height * 0.2,
-              Math.random() * windowSize.height * 0.7,
-              Math.random() * windowSize.height * 0.5,
+              Math.random() * windowSize.height,
+              Math.random() * windowSize.height,
+              Math.random() * windowSize.height,
+              Math.random() * windowSize.height,
             ],
             rotate: [0, 360, 720, 1080],
           }}
           transition={{
-            duration: Math.random() * 20 + 30, // Longer duration for more visible movement
+            duration: Math.random() * 20 + 30,
             repeat: Infinity,
-            repeatType: "reverse", // Makes the movement more natural
+            repeatType: "reverse",
             ease: "linear",
             rotate: {
               duration: Math.random() * 15 + 35,

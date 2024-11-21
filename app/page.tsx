@@ -2,7 +2,7 @@
 import { BackgroundBeams } from "./components/ui/background-beams";
 import ProfileCard from "./components/ProfileCard";
 import LinkCard from "./components/LinkCard";
-import { FloatingTechStack } from "./components/ui/floating-tech-stack";
+import dynamic from 'next/dynamic';
 import { 
   FaGithub, 
   FaLinkedin, 
@@ -11,6 +11,10 @@ import {
   FaTwitter
 } from "react-icons/fa6";
 import { BsFillPersonVcardFill } from "react-icons/bs";
+
+const ClientWrapper = dynamic(() => import('./components/ui/client-wrapper'), {
+  ssr: false
+});
 
 const links = [
   {
@@ -49,7 +53,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black p-4">
       <BackgroundBeams />
-      <FloatingTechStack />
+      <ClientWrapper />
       <div className="w-full max-w-xl mx-auto space-y-4 relative z-10">
         <div className="max-w-md mx-auto">
           <ProfileCard />
