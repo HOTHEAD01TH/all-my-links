@@ -2,6 +2,7 @@
 import { BackgroundBeams } from "./components/ui/background-beams";
 import ProfileCard from "./components/ProfileCard";
 import LinkCard from "./components/LinkCard";
+import { FloatingTechStack } from "./components/ui/floating-tech-stack";
 import { 
   FaGithub, 
   FaLinkedin, 
@@ -48,13 +49,14 @@ export default function Home() {
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black p-4">
       <BackgroundBeams />
-      <div className="w-full max-w-xl mx-auto space-y-3 relative z-10">
+      <FloatingTechStack />
+      <div className="w-full max-w-xl mx-auto space-y-4 relative z-10">
         <div className="max-w-md mx-auto">
           <ProfileCard />
         </div>
         <div className="space-y-3 max-w-md mx-auto">
           {links.map((link, i) => (
-            <div key={link.href} className="mb-2">
+            <div key={link.href}>
               <LinkCard
                 {...link}
                 className="animate-in py-3"

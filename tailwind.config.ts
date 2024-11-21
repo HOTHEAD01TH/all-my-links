@@ -12,6 +12,7 @@ const config: Config = {
         'border': 'border 4s ease infinite',
         'spotlight': 'spotlight 2s ease .75s 1 forwards',
         'blink': 'blink 1s step-end infinite',
+        'infinite-scroll': 'infinite-scroll 25s linear infinite',
       },
       keyframes: {
         border: {
@@ -31,6 +32,10 @@ const config: Config = {
         blink: {
           'from, to': { opacity: '1' },
           '50%': { opacity: '0' },
+        },
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' },
         }
       },
     },
