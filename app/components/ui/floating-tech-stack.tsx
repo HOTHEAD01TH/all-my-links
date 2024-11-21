@@ -151,7 +151,7 @@ export const FloatingTechStack = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
+//hello
   return (
     <div className="fixed inset-0 pointer-events-none">
       {techStack.map((tech, idx) => (
