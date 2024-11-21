@@ -24,8 +24,8 @@ import {
 const techStack = [
   {
     name: "HTML5",
-    icon: <FaHtml5 className="text-[#E34F26] w-12 h-12" />, // Increased size
-    size: 48 // Increased container size
+    icon: <FaHtml5 className="text-[#E34F26] w-12 h-12" />,
+    size: 48
   },
   {
     name: "CSS3",
@@ -99,33 +99,53 @@ const techStack = [
   }
 ];
 
-const generateRandomPosition = () => ({
-  x: -100, // Start from left side
-  y: Math.random() * window.innerHeight,
-});
-
-const generateRandomDestination = (windowSize: { width: number, height: number }) => {
-  const randomAngle = Math.random() * Math.PI * 2; // Random angle in radians
-  const distance = Math.random() * windowSize.width * 0.8; // Random distance
-  
+const getWindowSize = () => {
+  if (typeof window !== 'undefined') {
+    return {
+      width: window.innerWidth,
+      height: window.innerHeight
+    };
+  }
   return {
-    x: Math.cos(randomAngle) * distance + windowSize.width * 0.3,
-    y: Math.sin(randomAngle) * distance + windowSize.height * 0.5,
+    width: 1000,
+    height: 1000
   };
 };
 
+const generateRandomPosition = () => {
+  const windowSize = getWindowSize();
+  const side = Math.floor(Math.random() * 4);
+  
+  switch(side) {
+    case 0: // Top
+      return {
+        x: Math.random() * windowSize.width,
+        y: -50
+      };
+    case 1: // Right
+      return {
+        x: windowSize.width + 50,
+        y: Math.random() * windowSize.height
+      };
+    case 2: // Bottom
+      return {
+        x: Math.random() * windowSize.width,
+        y: windowSize.height + 50
+      };
+    default: // Left
+      return {
+        x: -50,
+        y: Math.random() * windowSize.height
+      };
+  }
+};
+
 export const FloatingTechStack = () => {
-  const [windowSize, setWindowSize] = useState({
-    width: typeof window !== 'undefined' ? window.innerWidth : 1000,
-    height: typeof window !== 'undefined' ? window.innerHeight : 1000,
-  });
+  const [windowSize, setWindowSize] = useState(getWindowSize());
 
   useEffect(() => {
     const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
+      setWindowSize(getWindowSize());
     };
 
     window.addEventListener('resize', handleResize);
@@ -133,46 +153,54 @@ export const FloatingTechStack = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none">
-      {techStack.map((tech, idx) => {
-        const dest1 = generateRandomDestination(windowSize);
-        const dest2 = generateRandomDestination(windowSize);
-        
-        return (
-          <motion.div
-            key={tech.name}
-            className="absolute"
-            initial={generateRandomPosition()}
-            animate={{
-              x: [null, dest1.x, dest2.x],
-              y: [null, dest1.y, dest2.y],
-              rotate: [0, 360, 720, 1080],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 25, // Slightly longer duration
+    <div className="fixed inset-0 pointer-events-none overflow-hidden">
+      {techStack.map((tech, idx) => (
+        <motion.div
+          key={tech.name}
+          className="absolute"
+          initial={generateRandomPosition()}
+          animate={{
+            x: [
+              null,
+              Math.random() * windowSize.width,
+              Math.random() * windowSize.width,
+              Math.random() * windowSize.width,
+              Math.random() * windowSize.width,
+            ],
+            y: [
+              null,
+              Math.random() * windowSize.height,
+              Math.random() * windowSize.height,
+              Math.random() * windowSize.height,
+              Math.random() * windowSize.height,
+            ],
+            rotate: [0, 360, 720, 1080],
+          }}
+          transition={{
+            duration: Math.random() * 20 + 30,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "linear",
+            rotate: {
+              duration: Math.random() * 15 + 35,
               repeat: Infinity,
               ease: "linear",
-              rotate: {
-                duration: Math.random() * 15 + 35,
-                repeat: Infinity,
-                ease: "linear",
-              }
+            }
+          }}
+        >
+          <div 
+            className="relative bg-white/5 backdrop-blur-sm rounded-full p-3 border border-white/10"
+            style={{
+              width: tech.size,
+              height: tech.size,
             }}
           >
-            <div 
-              className="relative bg-white/5 backdrop-blur-sm rounded-full p-3 border border-white/10"
-              style={{
-                width: tech.size,
-                height: tech.size,
-              }}
-            >
-              <div className="w-full h-full flex items-center justify-center hover:scale-110 transition-transform">
-                {tech.icon}
-              </div>
+            <div className="w-full h-full flex items-center justify-center hover:scale-110 transition-transform">
+              {tech.icon}
             </div>
-          </motion.div>
-        );
-      })}
+          </div>
+        </motion.div>
+      ))}
     </div>
   );
 };

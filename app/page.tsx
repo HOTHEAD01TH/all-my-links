@@ -18,32 +18,32 @@ const ClientWrapper = dynamic(() => import('./components/ui/client-wrapper'), {
 
 const links = [
   {
-    href: "https://portfolio.yourdomain.com",
+    href: "https://hothead01th.vercel.app",
     label: "Portfolio",
     icon: <BsFillPersonVcardFill className="mb-0.5" />
   },
   {
-    href: "https://github.com/yourusername",
+    href: "https://github.com/HOTHEAD01TH",
     label: "GitHub",
     icon: <FaGithub className="mb-0.5" />
   },
   {
-    href: "https://twitter.com/yourusername",
+    href: "https://x.com/HOTHEAD01TH",
     label: "Twitter",
     icon: <FaTwitter className="mb-0.5" />
   },
   {
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://linkedin.com/in/hothead01th",
     label: "LinkedIn",
     icon: <FaLinkedin className="mb-0.5" />
   },
   {
-    href: "https://instagram.com/yourusername",
+    href: "https://instagram.com/hothead01th",
     label: "Instagram",
     icon: <FaInstagram className="mb-0.5" />
   },
   {
-    href: "https://hashnode.yourusername.dev",
+    href: "https://hashnode.hothead01th.dev",
     label: "Blog",
     icon: <FaHashnode className="mb-0.5" />
   },
