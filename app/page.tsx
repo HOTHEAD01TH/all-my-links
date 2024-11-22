@@ -20,32 +20,32 @@ const links = [
   {
     href: "https://hothead01th.vercel.app",
     label: "Portfolio",
-    icon: <BsFillPersonVcardFill className="mb-0.5" />
+    icon: <BsFillPersonVcardFill className="mt-0.5" style={{ color: '#0ea5e9' }} />
   },
   {
     href: "https://github.com/HOTHEAD01TH",
     label: "GitHub",
-    icon: <FaGithub className="mb-0.5" />
+    icon: <FaGithub className="mt-0.5" style={{ color: '#6e7681' }} />
   },
   {
     href: "https://x.com/HOTHEAD01TH",
     label: "Twitter",
-    icon: <FaTwitter className="mb-0.5" />
+    icon: <FaTwitter className="mt-0.5" style={{ color: '#1DA1F2' }} />
   },
   {
     href: "https://linkedin.com/in/hothead01th",
     label: "LinkedIn",
-    icon: <FaLinkedin className="mb-0.5" />
+    icon: <FaLinkedin className="mt-0.5" style={{ color: '#0A66C2' }} />
   },
   {
     href: "https://instagram.com/hothead01th",
     label: "Instagram",
-    icon: <FaInstagram className="mb-0.5" />
+    icon: <FaInstagram className="mt-0.5" style={{ color: '#E4405F' }} />
   },
   {
-    href: "https://hashnode.hothead01th.dev",
+    href: "https://hothead01th.hashnode.dev",
     label: "Blog",
-    icon: <FaHashnode className="mb-0.5" />
+    icon: <FaHashnode className="mt-0.5" style={{ color: '#2962FF' }} />
   },
 ];
 

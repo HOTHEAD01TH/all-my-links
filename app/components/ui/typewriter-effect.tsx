@@ -39,7 +39,7 @@ export const TypewriterEffect = () => {
   };
 
   return (
-    <span className="text-gray-300">
+    <span className="text-white text-base">
       {text}
       <span className="inline-block w-[2px] h-4 ml-1 bg-white animate-blink" />
     </span>
