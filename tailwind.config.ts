@@ -13,6 +13,9 @@ const config: Config = {
         'spotlight': 'spotlight 2s ease .75s 1 forwards',
         'blink': 'blink 1s step-end infinite',
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        'glitch': 'glitch 500ms infinite',
+        'glitch-2': 'glitch-2 750ms infinite',
+        'deform': 'deform 200ms ease-in-out infinite',
       },
       keyframes: {
         border: {
@@ -36,7 +39,68 @@ const config: Config = {
         'infinite-scroll': {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(-50%)' },
-        }
+        },
+        'deform': {
+          '0%': {
+            transform: 'scale(1) skewX(0deg)',
+          },
+          '25%': {
+            transform: 'scale(1.02) skewX(2deg)',
+          },
+          '50%': {
+            transform: 'scale(0.98) skewX(-2deg)',
+          },
+          '75%': {
+            transform: 'scale(1.02) skewX(2deg)',
+          },
+          '100%': {
+            transform: 'scale(1) skewX(0deg)',
+          },
+        },
+        'glitch': {
+          '0%, 100%': {
+            transform: 'translate(0)',
+            filter: 'hue-rotate(0deg)',
+          },
+          '20%': {
+            transform: 'translate(-2px, 2px)',
+            filter: 'hue-rotate(45deg)',
+          },
+          '40%': {
+            transform: 'translate(-2px, -2px)',
+            filter: 'hue-rotate(-45deg)',
+          },
+          '60%': {
+            transform: 'translate(2px, 2px)',
+            filter: 'hue-rotate(45deg)',
+          },
+          '80%': {
+            transform: 'translate(2px, -2px)',
+            filter: 'hue-rotate(-45deg)',
+          },
+        },
+        'glitch-2': {
+          '0%, 100%': {
+            transform: 'translate(0)',
+            filter: 'hue-rotate(0deg)',
+          },
+          '20%': {
+            transform: 'translate(2px, -2px)',
+            filter: 'hue-rotate(-45deg)',
+          },
+          '40%': {
+            transform: 'translate(2px, 2px)',
+            filter: 'hue-rotate(45deg)',
+          },
+          '60%': {
+            transform: 'translate(-2px, -2px)',
+            filter: 'hue-rotate(-45deg)',
+          },
+          '80%': {
+            transform: 'translate(-2px, 2px)',
+            filter: 'hue-rotate(45deg)',
+          },
+        },
       },
     },
   },

@@ -19,9 +19,9 @@ export const GlitchText = () => {
       
       let stage = 0;
       const glitchSequence = setInterval(() => {
-        if (stage < 8) { // Digital noise phase
-          setText(generateMatrixText(8)); // Fixed length for consistent width
-        } else if (stage === 8) { // Switch to target text
+        if (stage < 8) {
+          setText(generateMatrixText(8));
+        } else if (stage === 8) {
           setText(text === 'ZAID ADIL' ? 'HOT HEAD' : 'ZAID ADIL');
           setIsGlitching(false);
           clearInterval(glitchSequence);
@@ -30,7 +30,7 @@ export const GlitchText = () => {
       }, 50);
 
       return () => clearInterval(glitchSequence);
-    }, 1500);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [text]);

@@ -2,8 +2,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { 
-  FaHtml5, 
-  FaCss3Alt, 
   FaJs, 
   FaReact, 
   FaNodeJs, 
@@ -11,27 +9,26 @@ import {
   FaGitAlt, 
   FaDocker, 
   FaAws,
-  FaBootstrap 
 } from "react-icons/fa6";
 import { 
   SiTypescript, 
   SiNextdotjs, 
   SiTailwindcss, 
   SiMongodb,
-  SiMysql
+  SiMysql,
+  SiFirebase, 
+  SiJenkins, 
+  SiKubernetes, 
+  SiSolidity, 
+  SiBurpsuite,
+  SiWireshark,
+  // SiNmap,
+  SiKalilinux 
 } from "react-icons/si";
+import { GiMetalBar } from "react-icons/gi";
+import { TbNetwork } from "react-icons/tb";
 
 const techStack = [
-  {
-    name: "HTML5",
-    icon: <FaHtml5 className="text-[#E34F26] w-12 h-12" />,
-    size: 48
-  },
-  {
-    name: "CSS3",
-    icon: <FaCss3Alt className="text-[#1572B6] w-12 h-12" />,
-    size: 48
-  },
   {
     name: "JavaScript",
     icon: <FaJs className="text-[#F7DF1E] w-12 h-12" />,
@@ -55,11 +52,6 @@ const techStack = [
   {
     name: "Tailwind",
     icon: <SiTailwindcss className="text-[#06B6D4] w-14 h-14" />,
-    size: 52
-  },
-  {
-    name: "Bootstrap",
-    icon: <FaBootstrap className="text-[#7952B3] w-14 h-14" />,
     size: 52
   },
   {
@@ -95,6 +87,51 @@ const techStack = [
   {
     name: "AWS",
     icon: <FaAws className="text-[#232F3E] w-14 h-14" />,
+    size: 52
+  },
+  {
+    name: "Firebase",
+    icon: <SiFirebase className="text-[#FFCA28] w-12 h-12" />,
+    size: 48
+  },
+  {
+    name: "Jenkins",
+    icon: <SiJenkins className="text-[#D24939] w-12 h-12" />,
+    size: 48
+  },
+  {
+    name: "Kubernetes",
+    icon: <SiKubernetes className="text-[#326CE5] w-14 h-14" />,
+    size: 52
+  },
+  {
+    name: "Solidity",
+    icon: <SiSolidity className="text-[#363636] w-12 h-12" />,
+    size: 48
+  },
+  {
+    name: "Burp Suite",
+    icon: <SiBurpsuite className="text-[#FF6633] w-12 h-12" />,
+    size: 48
+  },
+  {
+    name: "Wireshark",
+    icon: <SiWireshark className="text-[#1679A7] w-12 h-12" />,
+    size: 48
+  },
+  // {
+  //   name: "Nmap",
+  //   icon: <SiNmap className="text-[#4B275F] w-12 h-12" />,
+  //   size: 48
+  // },
+  {
+    name: "Metasploit",
+    icon: <GiMetalBar className="text-[#2A6478] w-12 h-12" />,
+    size: 48
+  },
+  {
+    name: "Kali Linux",
+    icon: <SiKalilinux className="text-[#557C94] w-14 h-14" />,
     size: 52
   }
 ];
