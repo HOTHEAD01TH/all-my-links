@@ -42,11 +42,11 @@ const links = [
     label: "Instagram",
     icon: <FaInstagram className="mt-0.5" style={{ color: '#E4405F' }} />
   },
-  // {
-  //   href: "https://hothead01th.hashnode.dev",
-  //   label: "Blog",
-  //   icon: <FaHashnode className="mt-0.5" style={{ color: '#2962FF' }} />
-  // },
+   {
+     href: "https://hothead01th.hashnode.dev",
+     label: "Blog",
+     icon: <FaHashnode className="mt-0.5" style={{ color: '#2962FF' }} />
+   },
 ];
 
 export default function Home() {
