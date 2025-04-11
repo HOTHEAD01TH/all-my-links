@@ -32,11 +32,7 @@ const links = [
     label: "Twitter",
     icon: <FaTwitter className="mt-0.5" style={{ color: '#1DA1F2' }} />
   },
-  {
-    href: "https://linkedin.com/in/hothead01th",
-    label: "LinkedIn",
-    icon: <FaLinkedin className="mt-0.5" style={{ color: '#0A66C2' }} />
-  },
+
   {
     href: "https://instagram.com/hothead01th",
     label: "Instagram",

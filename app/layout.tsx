@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Your Linktree',
+  title: 'XAIDS Linktree',
   description: 'Your personal link collection',
 }
 

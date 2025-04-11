@@ -19,7 +19,7 @@ export default function ProfileCard() {
       >
         <div className="flex flex-col items-center">
           <GlitchImage
-            primaryImage="/zaid.jpg"
+            primaryImage="/xaid.jpg"
             secondaryImage="/hothead.jpg"
             width={128}
             height={128}
